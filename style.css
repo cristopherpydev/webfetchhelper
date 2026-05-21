@@ -1,0 +1,10 @@
+.apicard{
+    display: none;
+}
+.glass-success {
+    background-color: rgba(25, 135, 84, 0.3) !important;    
+}
+
+.response{
+    max-width: 100px;
+}
