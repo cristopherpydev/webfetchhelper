@@ -18,7 +18,17 @@
         <div class="card p-5">
             <h1>Place your endpoint</h1>
             <div class="d-flex gap-2">
+                <label for="">No parameters accepted</label>
+                <input type="checkbox" name="" id="checkParam" checked onchange="checkListener()">
+            </div>
+            <div class="d-flex gap-2">
                 <input type="text" placeholder="i.e: https://api.sampleapis.com/futurama/characters" class="form-control" id="api-uri" oninput="reset()">
+                <select name="Options" id="options" class="check form-select">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
                 <input type="button" value="Fetch" class="btn btn-success" onclick="btnFetch()">
             </div>
         </div>
@@ -32,8 +42,12 @@
                 <button class="jsonbtn btn btn-success" onclick="downloadJSONFile()"><i class="bi bi-filetype-json"></i></button>
             </div>
         </div>
+        <p>By default, this app executes the GET method</p>
+
     </div>
 
 </body>
+<script src="./is_checked.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</html>>
+</html>
