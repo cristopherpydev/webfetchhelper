@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>WebFetch Explorer</title>
 </head>
-<script src="./script.js"></script>
+<script type="module" src="./script.js"></script>
 
 <body>
     <div class="container p-5 my-5 bg-dark text-white">
@@ -23,13 +23,16 @@
             </div>
             <div class="d-flex gap-2">
                 <input type="text" placeholder="i.e: https://api.sampleapis.com/futurama/characters" class="form-control" id="api-uri" oninput="reset()">
-                <select name="Options" id="options" class="check form-select">
+                <select name="Options" id="options" class="check form-select" onchange="displayStatus()">
                     <option value="GET">GET</option>
                     <option value="POST">POST</option>
                     <option value="PUT">PUT</option>
                     <option value="DELETE">DELETE</option>
                 </select>
                 <input type="button" value="Fetch" class="btn btn-success" onclick="btnFetch()">
+            </div>
+            <div class="d-flex gap-2 mt-2">
+                <textarea name="" id="body" placeholder="body for the request" class="form-control" style="font-family: monospace;"></textarea>
             </div>
         </div>
         <div class="apicard card p-5 my-5">
@@ -42,12 +45,12 @@
                 <button class="jsonbtn btn btn-success" onclick="downloadJSONFile()"><i class="bi bi-filetype-json"></i></button>
             </div>
         </div>
-        <p>By default, this app executes the GET method</p>
+        <p>Note: By default, this app executes the GET method over an endpoint</p>
 
     </div>
 
 </body>
 <script src="./is_checked.js"></script>
-
+<!--BSv5 down-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
