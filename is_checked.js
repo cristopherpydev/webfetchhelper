@@ -8,7 +8,13 @@
         4º if the checkbox is checked, a combobox is checked for GET/POST/PUT/DELETE params.
 
 */
+const isCheckedParameters = document.getElementById('checkParam').checked;
+const combobox = document.querySelector('.check');
 
+    if (isCheckedParameters){
+        combobox.style.display = "none";
+        combobox.selectedIndex = 0;
+    }
 
 function checkListener(){
     const isCheckedParameters = document.getElementById('checkParam').checked;
