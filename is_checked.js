@@ -29,5 +29,65 @@ function checkListener(){
     }
 }
 
+function checkListenerTest(){
+    const switchTest = document.getElementById('stressMode').checked;
+    const switchFetch = document.getElementById('checkParam');
+
+    // > inputs
+
+    const inputFetch = document.getElementById('api-uri');
+    const inputTest = document.getElementById('test-api-uri');
+
+    // > buttons
+
+    const btnFetch = document.getElementById('fetchBtn');
+    const btnTest = document.getElementById('testBtn');
+
+    // > labels
+
+    const lblFetch = document.getElementById('lblReadOnly')
+
+    // > messages
+    
+    const cardBody = document.querySelector('.apicard');
+    const message = document.getElementById('api-content');
+    const bar = document.querySelector('.progress')
+    const barDisplayal = document.querySelector('.progress');
+    //card reset
+    cardBody.style.display = "none";
+    message.textContent = "";
+    bar.style.display = "none";
+
+    if (switchTest){
+        //when on, we clean the UX
+        inputFetch.style.display = "none";
+        switchFetch.style.display = "none";
+        lblFetch.style.display = "none";
+        btnFetch.style.display = "none";
+        //when on, we display the new UX
+        
+        inputTest.style.display = "block";
+        btnTest.style.display = "block"
+
+    }
+    else{
+        //when off, we clean the UX
+
+        inputFetch.style.display = "block";
+        switchFetch.style.display = "block";
+        lblFetch.style.display = "block";
+        btnFetch.style.display = "block";
+
+
+        //when off, we display the DEFAULT UX
+        barDisplayal.style.display = "none";
+
+        inputTest.style.display = "none";
+        btnTest.style.display = "none"
+        bar.style.display = "none";
+
+
+    }
+}
 
 

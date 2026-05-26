@@ -18,24 +18,30 @@
         <div class="card p-5">
             <h1>Place your endpoint</h1>
             <div class="d-flex gap-2">
-                <label for="">Read-only?</label>
+                <label for="" id="lblReadOnly">Read-only?</label>
                 <input type="checkbox" name="" id="checkParam" checked onchange="checkListener()">
-                <!--Stress mode is a new feature to be implemented soon-->
+                <!-- Stress mode is a new feature to be implemented soon -->
                 <label for="">Stress mode</label>
-                <input type="checkbox" name="" id="stressMode" onchange="setStressMode()">
+                <input type="checkbox" name="" id="stressMode" onchange="checkListenerTest()">
             </div>
             <div class="d-flex gap-2">
                 <input type="text" placeholder="i.e: https://api.sampleapis.com/futurama/characters" class="form-control" id="api-uri" oninput="reset()">
+                <input type="text" placeholder="Test the latency: i.e: https://api.sampleapis.com/futurama/characters" class="test form-control" id="test-api-uri">
                 <select name="Options" id="options" class="check form-select" onchange="displayStatus()">
                     <option value="GET">GET</option>
                     <option value="POST">POST</option>
                     <option value="PUT">PUT</option>
                     <option value="DELETE">DELETE</option>
                 </select>
-                <input type="button" value="Fetch" class="btn btn-success" onclick="btnFetch()">
+                <input type="button" value="Fetch" class="btn btn-success" onclick="btnFetch()" id="fetchBtn">
+                <input type="button" value="Test" class="test-btn btn btn-success" onclick="btnStressTest()" id="testBtn">
+
             </div>
             <div class="d-flex flex-column align-items-center my-3">
-                <span class="request-status badge text-bg-primary">state</span>
+                <span class="request-status badge text-bg-primary" id="stateBadge">state</span>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 0%" id="bar"></div>
             </div>
             <p>https://6a15542f91ff9a63de07eebf.mockapi.io/r3dtest/users</p>
             <div class="d-flex gap-2 mt-2">
@@ -79,5 +85,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="./is_checked.js"></script>
 <script src="./toast_trigger.js"></script>
-
+<script src="./stress_test.js"></script>
 </html>
