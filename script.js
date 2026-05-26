@@ -1,17 +1,25 @@
 import {displayStatus} from "./http_options.js"
 
 //api fetch logic
+
+
 let jsonData = null;
 async function btnFetch(){
     jsonData = null;
-    const apiUri = document.getElementById("api-uri");
+
+    const apiUri = document.getElementById('api-uri');
     const status = document.getElementById('api-result');
     const apiContent = document.getElementById('api-content');
+    
+    //   ========================================  
+    //  ||           CLASS SELECTION            ||   
+    //   ========================================
+    
     const cardBody = document.querySelector('.apicard');
     const background = document.querySelector('.glass-success');
     const btnDownloadJSON = document.querySelector('.jsonbtn');
     const currentStatus = displayStatus();
-    console.log(currentStatus);
+    // console.log(currentStatus);
 
     if (apiUri.value.trim() === "") {
         return;
@@ -70,13 +78,143 @@ async function btnFetch(){
 
             break;
         case 'POST':
-            window.alert("There is nothing to do with POST statement");
+            try {
+                const requestBody = document.getElementById('body').value;
+
+                const config = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: requestBody ? requestBody : null
+                };
+
+                const response = await fetch(apiUri.value, config);
+
+                const timeOut = performance.now();
+                const totalTimeIntervall = (timeOut - startingTimeInterval).toFixed(2);
+
+                document.getElementById('time').textContent = totalTimeIntervall;
+                status.textContent = response.status;
+
+                const contentType = response.headers.get("content-type");
+
+                let data;
+
+                if (contentType && contentType.includes("application/json")) {
+                    data = await response.json();
+                    jsonData = JSON.stringify(data, null, 2);
+                    apiContent.innerHTML = "<pre>" + jsonData + "</pre>";
+                } else {
+                    data = await response.text();
+                    jsonData = data;
+                    apiContent.textContent = data;
+                }
+
+                cardBody.style.display = "block";
+                background.style.backgroundColor = "";
+                btnDownloadJSON.style.display = "block";
+
+            } catch (error) {
+                cardBody.style.display = "block";
+                background.style.setProperty('background-color', '#f58690', 'important');
+                status.textContent = "Error";
+                apiContent.textContent = error.message;
+                btnDownloadJSON.style.display = "none";
+            }
+
             break;
         case 'PUT':
-            window.alert("There is nothing to do with PUT statement");
+            try {
+                const requestBody = document.getElementById('body').value;
+
+                const config = {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: requestBody ? requestBody : null
+                };
+
+                const response = await fetch(apiUri.value, config);
+
+                const timeOut = performance.now();
+                const totalTimeIntervall = (timeOut - startingTimeInterval).toFixed(2);
+
+                document.getElementById('time').textContent = totalTimeIntervall;
+                status.textContent = response.status;
+
+                const contentType = response.headers.get("content-type");
+
+                let data;
+
+                if (contentType && contentType.includes("application/json")) {
+                    data = await response.json();
+                    jsonData = JSON.stringify(data, null, 2);
+                    apiContent.innerHTML = "<p>Modified:</p><pre>" + jsonData + "</pre>";
+                } else {
+                    data = await response.text();
+                    jsonData = data;
+                    apiContent.textContent = data;
+                }
+
+                cardBody.style.display = "block";
+                background.style.backgroundColor = "";
+                btnDownloadJSON.style.display = "block";
+
+            } catch (error) {
+                cardBody.style.display = "block";
+                background.style.setProperty('background-color', '#f58690', 'important');
+                status.textContent = "Error";
+                apiContent.textContent = error.message;
+                btnDownloadJSON.style.display = "none";
+            }
             break;
         case 'DELETE':
-            window.alert("There is nothing to do with DELETE statement");
+            try {
+                const requestBody = document.getElementById('body').value;
+
+                const config = {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: requestBody ? requestBody : null
+                };
+
+                const response = await fetch(apiUri.value, config);
+
+                const timeOut = performance.now();
+                const totalTimeIntervall = (timeOut - startingTimeInterval).toFixed(2);
+
+                document.getElementById('time').textContent = totalTimeIntervall;
+                status.textContent = response.status;
+
+                const contentType = response.headers.get("content-type");
+
+                let data;
+
+                if (contentType && contentType.includes("application/json")) {
+                    data = await response.json();
+                    jsonData = JSON.stringify(data, null, 2);
+                    apiContent.innerHTML = "<p>Deleted:</p><pre>" + jsonData + "</pre>";
+                } else {
+                    data = await response.text();
+                    jsonData = data;
+                    apiContent.textContent = data;
+                }
+
+                cardBody.style.display = "block";
+                background.style.backgroundColor = "";
+                btnDownloadJSON.style.display = "block";
+
+            } catch (error) {
+                cardBody.style.display = "block";
+                background.style.setProperty('background-color', '#f58690', 'important');
+                status.textContent = "Error";
+                apiContent.textContent = error.message;
+                btnDownloadJSON.style.display = "none";
+            }
             break;
         default:
             break;
@@ -106,6 +244,7 @@ function reset(){
     document.getElementById("api-content").textContent = "";
     document.getElementById("api-result").textContent = "";
 }
+
 
 window.btnFetch = btnFetch;
 window.reset = reset;

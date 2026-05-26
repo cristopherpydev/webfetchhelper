@@ -17,3 +17,9 @@
 .body{
     display: block;
 }
+.request-status{
+    max-width: 100px;
+}
+.background{
+    background-color: rgb(98, 58, 134);
+}

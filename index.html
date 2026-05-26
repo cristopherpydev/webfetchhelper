@@ -11,15 +11,18 @@
 </head>
 <script type="module" src="./script.js"></script>
 
-<body>
+<body class="bg-dark">
     <div class="container p-5 my-5 bg-dark text-white">
         <h1>WebFetch Explorer</h1>
         <p>Your helper to Fetch over APIs</p>
         <div class="card p-5">
             <h1>Place your endpoint</h1>
             <div class="d-flex gap-2">
-                <label for="">No parameters accepted</label>
+                <label for="">Read-only?</label>
                 <input type="checkbox" name="" id="checkParam" checked onchange="checkListener()">
+                <!--Stress mode is a new feature to be implemented soon-->
+                <label for="">Stress mode</label>
+                <input type="checkbox" name="" id="stressMode" onchange="setStressMode()">
             </div>
             <div class="d-flex gap-2">
                 <input type="text" placeholder="i.e: https://api.sampleapis.com/futurama/characters" class="form-control" id="api-uri" oninput="reset()">
@@ -31,6 +34,10 @@
                 </select>
                 <input type="button" value="Fetch" class="btn btn-success" onclick="btnFetch()">
             </div>
+            <div class="d-flex flex-column align-items-center my-3">
+                <span class="request-status badge text-bg-primary">state</span>
+            </div>
+            <p>https://6a15542f91ff9a63de07eebf.mockapi.io/r3dtest/users</p>
             <div class="d-flex gap-2 mt-2">
                 <textarea name="" id="body" placeholder="body for the request" class="form-control" style="font-family: monospace;"></textarea>
             </div>
@@ -46,11 +53,31 @@
             </div>
         </div>
         <p>Note: By default, this app executes the GET method over an endpoint</p>
+        <button type="button" class="btn btn-primary" id="liveToastBtn">Hints</button>
 
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+            <img src="./img/90834682.jpg" height="32px" width="32px" class="rounded me-2" alt="...">
+            <strong class="me-auto">R3D</strong>
+            <small>Tutorial</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-black">
+            Hello there, I am here to help you. In order to get more information about this program, you should click on the link below:
+
+            </br>
+            <a href="tutorial.html" target="_blank">Guide</a>
+            </div>
+        </div>
+        </div>
     </div>
 
 </body>
-<script src="./is_checked.js"></script>
 <!--BSv5 down-->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="./is_checked.js"></script>
+<script src="./toast_trigger.js"></script>
+
 </html>

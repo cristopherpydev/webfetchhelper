@@ -7,11 +7,13 @@
 
 */
 const bodyContent = document.getElementById('body');
+
 bodyContent.style.display = 'none';
 
 export function displayStatus(){
     const option = document.getElementById('options').value;
     console.log(option);
+    bodyContent.value = "";
 
     switch (option) {
         case 'GET':
