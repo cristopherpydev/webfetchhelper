@@ -23,3 +23,12 @@
 .background{
     background-color: rgb(98, 58, 134);
 }
+.test{
+    display: none;
+}
+.test-btn{
+    display: none;
+}
+.progress{
+    display: none;
+}
