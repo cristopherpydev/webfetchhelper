@@ -1,7 +1,12 @@
+/* Author: Cristopher Mendez Cervantes | cristopherpydev (R3D)
+   GitHub: https://github.com/cristopherpydev
+   Portfolio: https://cristopherpydev.github.io/
+*/
+
 /* ==== DEV MAINTENANCE ==== 
 
     This script tries to control the behavior of the options, returning
-    a simple STRING showing up the current OPTION.
+    a simple STRING showing up the current user CHOSEN OPTION.
 
     script.js imports this function in order to control the main flux.
 
