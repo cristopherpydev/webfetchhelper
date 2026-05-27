@@ -1,3 +1,8 @@
+/* Author: Cristopher Mendez Cervantes | cristopherpydev (R3D)
+   GitHub: https://github.com/cristopherpydev
+   Portfolio: https://cristopherpydev.github.io/
+*/
+
 /*
 
         ===== DEV MAINTENANCE ===== 
@@ -42,6 +47,8 @@ function checkListenerTest(){
 
     const btnFetch = document.getElementById('fetchBtn');
     const btnTest = document.getElementById('testBtn');
+    const btnDownloadJSON = document.querySelector('.jsonbtn');
+    const btnDownloadPDF = document.querySelector('.pdfbtn');
 
     // > labels
 
@@ -51,12 +58,16 @@ function checkListenerTest(){
     
     const cardBody = document.querySelector('.apicard');
     const message = document.getElementById('api-content');
-    const bar = document.querySelector('.progress')
+    const bar = document.querySelector('.progress');
     const barDisplayal = document.querySelector('.progress');
+    const badge = document.getElementById('stateBadge');
+
     //card reset
     cardBody.style.display = "none";
     message.textContent = "";
     bar.style.display = "none";
+    btnDownloadJSON.style.display = "none";
+    btnDownloadPDF.style.display = "none";
 
     if (switchTest){
         //when on, we clean the UX
@@ -67,7 +78,7 @@ function checkListenerTest(){
         //when on, we display the new UX
         
         inputTest.style.display = "block";
-        btnTest.style.display = "block"
+        btnTest.style.display = "block";
 
     }
     else{
@@ -80,10 +91,13 @@ function checkListenerTest(){
 
 
         //when off, we display the DEFAULT UX
+        badge.value = ""
+        badge.style.display = "none";
+        
         barDisplayal.style.display = "none";
-
+        inputTest.value = "";
         inputTest.style.display = "none";
-        btnTest.style.display = "none"
+        btnTest.style.display = "none";
         bar.style.display = "none";
 
 

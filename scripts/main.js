@@ -1,3 +1,8 @@
+/* Author: Cristopher Mendez Cervantes | cristopherpydev (R3D)
+   GitHub: https://github.com/cristopherpydev
+   Portfolio: https://cristopherpydev.github.io/
+*/
+
 import {displayStatus} from "./http_options.js"
 
 

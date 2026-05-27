@@ -60,6 +60,10 @@ Since this is a vanilla front-end application, you don't need Node.js or any com
 
 - Bootstrap Icons
 
+## Problems faced
+
+- FOUC (Flash of Unstyled Content).
+
 ## Author
 cristopherpydev
 

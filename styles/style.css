@@ -1,0 +1,52 @@
+/* === (FOUC Fix) === */
+
+.apicard {
+    display: none;
+}
+
+#options {
+    display: none;
+}
+
+#body {
+    display: none;
+}
+
+.jsonbtn {
+    display: none; 
+}
+.pdfbtn {
+    display: none;
+}
+
+.test {
+    display: none;
+}
+.test-btn {
+    display: none;
+}
+.progress {
+    display: none;
+}
+.request-status {
+    display: none;
+}
+
+/* === COMPONENT STYLING === */
+
+.glass-success {
+    background-color: rgba(25, 135, 84, 0.3) !important;    
+}
+.response {
+    max-width: 100px;
+}
+.background {
+    background-color: rgb(98, 58, 134);
+}
+.custom-toast-header {
+    background-color: #A24589;
+}
+.custom-toast-header strong,
+.custom-toast-header small {
+    color: white;
+}
