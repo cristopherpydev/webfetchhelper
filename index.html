@@ -1,9 +1,18 @@
+<!-- 
+   
+   Author: Cristopher Mendez Cervantes | cristopherpydev (R3D)
+   GitHub: https://github.com/cristopherpydev
+   Portfolio: https://cristopherpydev.github.io/ 
+   
+   -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="cristopherpydev">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="cristopherpydev (R3D)">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -12,14 +21,13 @@
 
 <body class="bg-dark">
     <div class="container p-5 my-5 bg-dark text-white">
-        <h1>WebFetch Explorer</h1>
-        <p>Your helper to Fetch over APIs</p>
+        <h1 class="text-center text-primary mb-4"><i class="bi bi-journal-code"></i> WebFetch Explorer</h1>
+        <p class="lead text-center mb-4"></i>Your helper to Fetch over APIs</p>
         <div class="card p-5">
-            <h1>Place your endpoint</h1>
+            <h1 class="text-warning">Place your endpoint</h1>
             <div class="d-flex gap-2">
                 <label for="" id="lblReadOnly">Read-only?</label>
                 <input type="checkbox" name="" id="checkParam" checked onchange="checkListener()">
-                <!-- Stress mode is a new feature to be implemented soon -->
                 <label for="">Stress mode</label>
                 <input type="checkbox" name="" id="stressMode" onchange="checkListenerTest()">
             </div>
@@ -62,7 +70,9 @@
             </div>
         </div>
         <p>Note: By default, this app executes the GET method over an endpoint</p>
-        <button type="button" class="btn btn-primary" id="liveToastBtn">Hints</button>
+        <div class="d-flex align-items-end flex-column">
+            <button type="button" class="btn btn-primary" id="liveToastBtn">Tutorial</button>
+        </div>
         <!--TOAST helper-->
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast fs-5" role="alert" aria-live="assertive" aria-atomic="true">

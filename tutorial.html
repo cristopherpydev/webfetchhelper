@@ -1,17 +1,85 @@
+<!-- 
+   
+   Author: Cristopher Mendez Cervantes | cristopherpydev (R3D)
+   GitHub: https://github.com/cristopherpydev
+   Portfolio: https://cristopherpydev.github.io/ 
+   
+   -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="cristopherpydev (R3D)">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">    
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Tutorial</title>
+    <title>WebFetch Explorer - Tutorial</title>
 </head>
-<body class="background">
-    <div class="container bg-white my-5">
-        <h1 class="text-center">Tutorial</h1>
-        <p class="m-3">This app improves coding by testing different endpoints and getting results in real time. In order to get the best experience by </p>
+<body class="bg-dark text-light">
+    <div class="container bg-black border border-secondary rounded my-5 p-5 shadow-lg">
+        
+        <h1 class="text-center text-primary mb-4"><i class="bi bi-journal-code"></i> WebFetch Explorer Guide</h1>
+        <p class="lead text-center mb-5 text-secondary">Streamline your API testing workflow by evaluating endpoints and analyzing server responses in real-time.</p>
+
+        <hr class="border-secondary mb-5">
+
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-info"><i class="bi bi-braces-asterisk"></i> Understanding the Results</h2>
+                <p>Regardless of the HTTP method used, WebFetch Explorer processes the server's response dynamically based on its headers:</p>
+                <ul class="list-group list-group-flush border-start border-info border-3" data-bs-theme="dark">
+                    <li class="list-group-item bg-transparent">
+                        <strong>Visual Feedback:</strong> A successful response is displayed within a green background card. Otherwise, a red background indicates a failed request.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <strong>Status Badges:</strong> Every result includes two badges showing the HTTP status code (e.g., 200 OK, 404 Not Found) and the exact request latency in milliseconds.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <strong>JSON Handling:</strong> If an <code>application/json</code> header is detected, the payload is formatted for readability. A dedicated button will appear allowing you to download the raw JSON file.
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                        <strong>Image Rendering:</strong> If an image header is detected, the resource is automatically decoded and rendered in the UI. You can right-click to save it.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5 g-4">
+            <div class="col-md-6">
+                <div class="p-4 border border-secondary rounded h-100">
+                    <h2 class="text-success h4"><i class="bi bi-eye"></i> Read-Only Mode (Default)</h2>
+                    <p class="text-secondary">By default, the application is locked into Read-Only mode, exclusively executing <code>GET</code> requests.</p>
+                    <p>This ensures safe data retrieval without the risk of accidentally modifying server states. Simply paste your endpoint and click the <strong>Fetch</strong> button.</p>
+                    <div class="alert alert-dark border-secondary mt-3 mb-0" role="alert">
+                        <i class="bi bi-info-circle text-info me-2"></i> <em>Note: Response times may vary depending on the target API's current load.</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-4 border border-secondary rounded h-100">
+                    <h2 class="text-warning h4"><i class="bi bi-pencil-square"></i> Advanced Methods</h2>
+                    <p class="text-secondary">Toggling off the Read-Only switch unlocks the HTTP combobox, granting access to <code>POST</code>, <code>PUT</code>, and <code>DELETE</code> methods.</p>
+                    <p>When selecting a method that requires data transmission, a dedicated text area will appear, allowing you to attach a JSON payload to your request body.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="p-4 border border-danger rounded bg-dark">
+                    <h2 class="text-danger h4"><i class="bi bi-activity"></i> Stress Test Mode</h2>
+                    <p>The Stress Mode evaluates server stability and average response delays under continuous load by executing 50 consecutive ping requests.</p>
+                    <ul class="mb-0 text-secondary">
+                        <li><strong>Visual Analytics:</strong> Generates a real-time line chart mapping the latency of each iteration.</li>
+                        <li><strong>Exportable Reports:</strong> Once a valid response is set, you can instantly download a detailed PDF report of the performance metrics.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
